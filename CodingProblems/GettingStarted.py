@@ -84,13 +84,106 @@ while(number>0):
     number = number // 10
 print(reverse)
 
-num = 10
-n1, n2 = 0, 1
-print("Fibonacci Series:", n1, n2, end=" ")
-for i in range(2, num):
-    n3 = n1 + n2
-    n1 = n2
-    n2 = n3
-    print(n3, end=" ")
+# Check Whether or Not the Number is a Palindrome
+number = 1221
+temp  = number
+reverse = 0
+while temp > 0:
+    rem = temp % 10
+    reverse = (reverse * 10) + rem
+    temp = temp // 10
+if reverse == number:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
 
+# Check Whether a Given Number is an Armstrong Number or Not
+number = 371
+temp = number
+order = len(str(number))
+sum, digit = 0, 0
+for n in range(order):
+    digit = temp % 10
+    temp = temp // 10
+    sum += pow(digit, order)
+if sum == number:
+    print("armstrong")
+else:
+    print("not")
+
+# Find the Armstrong Numbers in a given Range
+n1, n2 = 10, 10000
+for n in range(n1, n2+1):
+    order = len(str(n))
+    sum, digit = 0, 0
+    temp = n
+    while temp > 0:
+        digit = temp % 10
+        temp = temp // 10
+        sum += pow(digit,order)
+    if sum == n:
+        print(n, end = ", ")
 print()
+
+# Find the Fibonacci Series up to Nth Term
+num = 10
+num1, num2 = 0, 1
+print(num1, num2, end=" ")
+for n in range(2, num):
+    num3 = num1 + num2
+    num1 = num2
+    num2 = num3
+    print(num3 , end=" ")
+print()
+
+# Factorial of a Number
+num = 6
+fact = 1
+while num > 0:
+    fact *= num
+    num = num -1
+print(fact)
+
+# Program to find Power of a number
+num, power = 2, 3
+print(pow(num, power))
+
+# Program to find factors of a number
+def printDivisors(n):
+    for i in range(1,n+1):
+        if n % i == 0:
+            print(i, end=" ")
+    print()
+
+printDivisors(100)
+
+# Program to Finding out the Prime Factors of a Number
+num = 21
+i = 2
+while num != 1:
+    if num % i == 0:
+        num = num // i
+        print(i, end=" ")
+    else:
+        i = i + 1
+print()
+
+# Check Whether or Not the Number is a Strong Number
+number = 145
+temp = number
+sum = 0
+f = [0] * 10
+f[0] = 1
+f[1] = 1
+for n in range(2,10):
+    f[n] = f[n-1] * n
+while temp > 0:
+    digit = temp % 10
+    temp = temp // 10
+    sum += f[digit]
+if(sum == number):
+    print("Strong no")
+else:
+    print("not strong")
+
+
