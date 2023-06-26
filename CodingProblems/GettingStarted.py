@@ -186,4 +186,70 @@ if(sum == number):
 else:
     print("not strong")
 
+# Check Whether or Not the Number is a Perfect Number
+num = 28
+sum = 0
+for n in range(1, num):
+    if num % n == 0:
+        sum += n
+if sum == num:
+    print("perfect number")
+else:
+    print("no")
 
+# Check for Perfect Square
+from math import sqrt
+def isPerfectSquare(num):
+    sr = int(sqrt(num))
+    return (sr * sr == num)
+print(isPerfectSquare(36))
+
+# Check Whether or Not the Number is an Automorphic Number
+num = 376
+square = pow(num, 2)
+len = len(str(num))
+mod = pow(10, len)
+
+if square % mod == num:
+    print("Automorphic number")
+else:
+    print("not")
+
+# Checking Whether the Number is Harshad or not
+num = 21
+temp = num
+sum = 0
+while num > 0:
+    digit = num % 10
+    num = num // 10
+    sum += digit
+if num % sum == 0:
+    print("Harshad")
+else:
+    print("not")
+
+# Program to check Abundant Number
+num = 12
+sum = 0
+for i in range(1, num):
+    if num % i == 0:
+        sum += i
+if num < sum:
+    print("abundant no")
+else:
+    print("not")
+
+# Check Whether or Not the Two Numbers  are Friendly Pairs
+def friendlyPair(n1, n2):
+    s1, s2 = 0, 0
+    for n in range(1, n1):
+        if n1 % n == 0:
+            s1 += n
+    for n in range(1, n2):
+        if n2 % n == 0:
+            s2 += n
+    r1 = s1 // n1
+    r2 = s2 // n2
+    return r1 == r2
+
+print(friendlyPair(6, 28))
